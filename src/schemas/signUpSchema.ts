@@ -1,8 +1,5 @@
 import { z } from "zod";
 
-const User = z.object({
-  username: z.string(),
-});
 
 export const usernameValidation = z
   .string()

@@ -1,0 +1,4 @@
+🚪Sign-up
+Code should effectively handles both scenarios of registering a new user and updating an existing but unverified user account
+
+Algo➡️⬇️

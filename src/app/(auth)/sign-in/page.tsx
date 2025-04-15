@@ -8,7 +8,7 @@ import {  z } from "zod"
 import { useRouter } from "next/navigation"
 
 
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader } from 'lucide-react'
@@ -36,19 +36,27 @@ function SignIn() {
 
 
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
-    const result = await signIn('credentials',{
-      redirect: false,
-      identifier: data.identifier,
-      password: data.password
-    });
-    console.log(result);
-    if(result?.error){
+    setIsSubmitting(true)
+    try {
+      const result = await signIn('credentials',{
+        redirect: false,
+        identifier: data.identifier,
+        password: data.password
+      });
+      //console.log(result);
+      if(result?.error){
+        toast.error("Incorrect Username or Password")
+      }
+      if(result?.url){
+        toast.success("Login Successfully")
+        route.replace("/dashboard")
+      }
+    } catch (error) {
       toast.error("Incorrect Username or Password")
+    }finally{
+      setIsSubmitting(false)
     }
-    if(result?.url){
-      toast.success("Login Successfully")
-      route.replace("/dashboard")
-    }
+    
     
   }
   return (

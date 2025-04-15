@@ -10,7 +10,7 @@ import { signUpSchema } from "@/schemas/signUpSchema"
 import axios, { AxiosError } from 'axios'
 import { ApiResponse } from "@/types/ApiResponse";
 
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader, Loader2 } from 'lucide-react'
@@ -44,7 +44,7 @@ function SignUp() {
         try {
           const response = await axios.get(`/api/check-username-unique?username=${username}`);
           //console.log(response);
-          let message = response.data.message
+          const message = response.data.message
           setUsernameMessage(message)
         } catch (error) {
           const axiosError = error as AxiosError<ApiResponse>;

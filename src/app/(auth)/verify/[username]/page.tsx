@@ -42,7 +42,7 @@ function VerifyCode() {
         } catch (error) {
             console.error("Error in sign-up user", error);
                   const axiosErr = error as AxiosError<ApiResponse>;
-                  let errorMsg = axiosErr.response?.data.message;
+                  const errorMsg = axiosErr.response?.data.message;
                   toast.error(errorMsg ?? "Unable to verify user")
         }
     }

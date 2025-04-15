@@ -24,6 +24,8 @@ export async function POST() {
         })
 
     } catch (error) {
+        console.log(error);
+        
         return Response.json({
             success: false,
             message: "not Get ai message"

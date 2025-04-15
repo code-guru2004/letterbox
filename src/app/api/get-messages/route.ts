@@ -4,7 +4,7 @@ import { authOptions } from "../auth/[...nextauth]/options";
 import mongoose from "mongoose";
 import UserModel from "@/model/user.model";
 
-export async function GET(req: Request) {
+export async function GET() {
     await dbConnect();
     const session = await getServerSession(authOptions);
     const user: User = session?.user as User; //TypeScript type assertion => In next-auth, the session.user is typed very loosely (as DefaultUser), which may not include extra fields you added (like _id, username,isAcceptingMessage,isVerified ).
@@ -53,6 +53,8 @@ export async function GET(req: Request) {
             }
         );
     } catch (error) {
+        console.log(error);
+        
         return Response.json(
             {
                 success: false,

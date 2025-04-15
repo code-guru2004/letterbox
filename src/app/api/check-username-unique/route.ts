@@ -33,7 +33,7 @@ export async function GET(req:Request) {
             // ]
 
 
-            // console.log(usernameError);
+            console.log(usernameError);
             return Response.json({
                 success : false,
                 message : 'Username must be 3-20 characters long and contain only letters, numbers, or underscores'

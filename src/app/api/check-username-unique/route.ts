@@ -20,7 +20,7 @@ export async function GET(req:Request) {
         // console.log(searchParams); //{ 'username' => 'test01' }
         
         const queryParam = { username: searchParams.get('username') }
-        //console.log(queryParam.username);
+        console.log(queryParam.username);
 
         const result = UsernameQuesrySchema.safeParse(queryParam);
         console.log("result",result); // result->➡️ {success-true/false , data: { username: 'nayan' } , error: [Getter]}

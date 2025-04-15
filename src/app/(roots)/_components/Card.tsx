@@ -77,13 +77,13 @@ function MessageCard({ message, onMessageDelete }: MessageCardProps) {
                         <div className="flex gap-2">
                             <AlertDialog>
                                 <AlertDialogTrigger asChild>
-                                    <Button
+                                    {/* <Button
                                         variant="destructive"
                                         className="p-2 cursor-pointer hover:bg-red-500"
                                         onClick={(e) => e.stopPropagation()}
                                     >
                                         <Trash />
-                                    </Button>
+                                    </Button> */}
                                 </AlertDialogTrigger>
                                 <AlertDialogContent onClick={(e) => e.stopPropagation()}>
                                     <AlertDialogHeader>

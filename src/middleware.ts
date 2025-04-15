@@ -7,7 +7,7 @@ export const config = {
 };
 
 export async function middleware(request: NextRequest) {
-  const token = request.cookies.get("__Secure-next-auth.session-token")?.value;
+  const token = request.cookies.get("__Secure-next-auth.session-token")?.value; //local-host: next-auth.session-token //production : __Secure-next-auth.session-token
   const url = request.nextUrl;
   // console.log(token);
   

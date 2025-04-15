@@ -52,6 +52,8 @@ function SignIn() {
         route.replace("/dashboard")
       }
     } catch (error) {
+      console.log(error);
+      
       toast.error("Incorrect Username or Password")
     }finally{
       setIsSubmitting(false)

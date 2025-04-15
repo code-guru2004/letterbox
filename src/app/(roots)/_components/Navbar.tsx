@@ -9,43 +9,56 @@ import {
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
-  } from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip"
 import { CircleUserRound } from 'lucide-react';
-  
+import Image from 'next/image';
+
 function Navbar() {
     const { data: session } = useSession();
-    //console.log(data);
-
     const user: User = session?.user as User;
+
     const handleLogout = () => {
         signOut();
     }
-    return (
-        <nav className='p-4 md:p-6 shadow-md mb-1'>
-            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-                <Link href={"#"} className="text-xl font-bold mb-4 md:mb-0">LetterBox</Link>
-                {
-                    session ? (
-                        <>
-                            <div className='hover:bord'>
-                                <TooltipProvider>
-                                    <Tooltip>
-                                        <TooltipTrigger asChild>
-                                            <div ><CircleUserRound /></div>
-                                        </TooltipTrigger>
-                                        <TooltipContent>
-                                            <p>{user.username || user?.email}</p>
-                                        </TooltipContent>
-                                    </Tooltip>
-                                </TooltipProvider>
-                            </div>
 
-                            <Button onClick={handleLogout}>Logout</Button>
-                        </>
-                    ) : (
-                        <Link href={"/sign-in"}>Login</Link>
-                    )
-                }
+    return (
+        <nav className='p-4 md:p-6 shadow-md mb-1 w-full'>
+            <div className="container mx-auto w-full flex flex-row md:flex-row justify-between items-center">
+                <Link href={"/"} className="text-xl font-bold mb-4 md:mb-0">
+                <Image
+                    src={'/logo.png'}
+                    width={150}
+                    height={150}
+                    alt='logo'
+                />
+                </Link>
+
+                <div className="flex items-center"> {/* Adjusting the space between the items */}
+                    {
+                        session ? (
+                            <div className='mr-3 flex items-center gap-5'>
+                                <div className='relative'>
+                                    <TooltipProvider>
+                                        <Tooltip>
+                                            <TooltipTrigger asChild>
+                                                <div>
+                                                    <CircleUserRound className="w-6 h-6 text-gray-700" />
+                                                </div>
+                                            </TooltipTrigger>
+                                            <TooltipContent>
+                                                <p>{user.username || user?.email}</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </TooltipProvider>
+                                </div>
+
+                                <Button className="" onClick={handleLogout}>Logout</Button>
+                            </div>
+                        ) : (
+                            <Link href={"/sign-in"} className="md:inline-block">Login</Link>
+                        )
+                    }
+                </div>
             </div>
         </nav>
     )

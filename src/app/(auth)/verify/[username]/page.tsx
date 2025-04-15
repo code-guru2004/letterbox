@@ -3,7 +3,7 @@ import { verifySchema } from '@/schemas/verifySchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios, { AxiosError } from 'axios';
 import { useParams, useRouter } from 'next/navigation'
-import React, { use } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form';
 
 import { z } from 'zod';

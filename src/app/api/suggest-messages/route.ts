@@ -1,6 +1,6 @@
 import { chatSession } from "../../../../utils/GeminiAI";
 
-export async function POST(req: Request) {
+export async function POST() {
     try {
         const prompt =
             "Generate short, funny messages with Indian cultural humor. Include references to daily life, typical Indian behavior, Bollywood drama, relatives, desi phrases, or common situations like late replies, overdramatic friends, or nosy aunties. The tone should be witty, sarcastic, and relatable for Indian audiences. Use Hinglish (Hindi + English) where it adds humor. Each question should be separated by '||'."

@@ -4,8 +4,13 @@ import { authOptions } from "../../auth/[...nextauth]/options";
 import UserModel from "@/model/user.model";
 import mongoose from "mongoose";
 
-export async function DELETE(req: Request, { params }: { params: { messageid: string } }) {
+export async function DELETE(
+    request: Request,
+    { params }: { params: { messageid: string } }
+  ) {
     await dbConnect();
+    console.log(request);
+    
     const messageId = params.messageid;
     const session = await getServerSession(authOptions);
     const user: User = session?.user as User; //TypeScript type assertion => In next-auth, the session.user is typed very loosely (as DefaultUser), which may not include extra fields you added (like _id, username,isAcceptingMessage,isVerified ).

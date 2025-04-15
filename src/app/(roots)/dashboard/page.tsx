@@ -133,6 +133,7 @@ function Dashboard() {
         checked={acceptMessage}
         onCheckedChange={handleSwitchChange}
         disabled={isSwitchLoading}
+        className='cursor-pointer'
       />
       <span className="ml-2">
         Accept Messages: {acceptMessage ? 'On' : 'Off'}

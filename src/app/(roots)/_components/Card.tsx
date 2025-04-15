@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/card"
 import {
     AlertDialog,
-    AlertDialogAction,
     AlertDialogCancel,
     AlertDialogContent,
     AlertDialogDescription,
@@ -42,11 +41,11 @@ function MessageCard({ message, onMessageDelete }: MessageCardProps) {
     const [viewDialogOpen, setViewDialogOpen] = useState(false)
     const dialogRef = useRef<HTMLDivElement>(null)
 
-    async function handleDeleteConfirm() {
-        await axios.delete(`/api/deleteMessage/${message._id}`);
-        toast.success("Message Deleted");
-        onMessageDelete(message._id as string);
-    }
+    // async function handleDeleteConfirm() {
+    //     await axios.delete(`/api/deleteMessage/${message._id}`);
+    //     toast.success("Message Deleted");
+    //     onMessageDelete(message._id as string);
+    // }
 
     const handleDownload = async () => {
         if (!dialogRef.current) return
@@ -98,7 +97,7 @@ function MessageCard({ message, onMessageDelete }: MessageCardProps) {
                                         <AlertDialogCancel onClick={(e) => e.stopPropagation()}>
                                             Cancel
                                         </AlertDialogCancel>
-                                        <AlertDialogAction
+                                        {/* <AlertDialogAction
                                             onClick={(e) => {
                                                 e.stopPropagation()
                                                 handleDeleteConfirm()
@@ -106,7 +105,7 @@ function MessageCard({ message, onMessageDelete }: MessageCardProps) {
                                             className="bg-red-700 hover:bg-red-600"
                                         >
                                             Delete
-                                        </AlertDialogAction>
+                                        </AlertDialogAction> */}
                                     </AlertDialogFooter>
                                 </AlertDialogContent>
                             </AlertDialog>

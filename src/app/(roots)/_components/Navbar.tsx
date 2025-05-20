@@ -10,7 +10,7 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { CircleUserRound } from 'lucide-react';
+import { CircleUserRound, LogIn } from 'lucide-react';
 import Image from 'next/image';
 
 function Navbar() {
@@ -55,7 +55,7 @@ function Navbar() {
                                 <Button className="" onClick={handleLogout}>Logout</Button>
                             </div>
                         ) : (
-                            <Link href={"/sign-in"} className="md:inline-block">Login</Link>
+                            <Link href={"/sign-in"} className="md:inline-block bg-black p-3"><LogIn className='ml-1.5'/>Login</Link>
                         )
                     }
                 </div>

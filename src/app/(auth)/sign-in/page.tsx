@@ -103,7 +103,7 @@ function SignIn() {
                 <>
                   <Loader className="h-4 w-4 mr-2 animate-spin" />Holding Tight...
                 </>
-              ) : "Register"}</Button>
+              ) : "Log in"}</Button>
           </form>
         </Form>
         <div className="text-center mt-4">

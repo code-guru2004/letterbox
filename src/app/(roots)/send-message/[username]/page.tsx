@@ -111,7 +111,7 @@ function SendMessage() {
               Loading...
             </span>
           ) : (
-            "Suggest Messages"
+            "Suggest by AI 🤖"
           )}
         </Button>
         <p className="text-sm text-gray-600">Click on any message below to select it.</p>

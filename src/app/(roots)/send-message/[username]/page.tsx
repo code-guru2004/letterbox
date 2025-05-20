@@ -102,16 +102,16 @@ function SendMessage() {
       <div className="space-y-2">
         <Button
           onClick={getMessageByAI}
-          className="w-full sm:w-auto bg-green-500 hover:bg-green-600 transition-all duration-200"
+          className="w-full sm:w-auto bg-green-600 hover:bg-green-700 transition-all duration-200"
           disabled={suggestmessageLoading}
         >
           {suggestmessageLoading ? (
             <span className='flex items-center gap-2'>
               <span className='animate-spin'><Loader /></span>
-              Loading...
+              Getting Messages...
             </span>
           ) : (
-            "Suggest by AI 🤖"
+            "Get AI suggestion 🤖"
           )}
         </Button>
         <p className="text-sm text-gray-600">Click on any message below to select it.</p>

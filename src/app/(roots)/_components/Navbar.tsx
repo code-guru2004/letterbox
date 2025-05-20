@@ -55,7 +55,9 @@ function Navbar() {
                                 <Button className="" onClick={handleLogout}>Logout</Button>
                             </div>
                         ) : (
-                            <Link href={"/sign-in"} className="md:inline-block bg-black p-3"><LogIn className='ml-1.5'/>Login</Link>
+                            <Link href="/sign-in" className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium">
+              Login
+            </Link>
                         )
                     }
                 </div>

@@ -42,7 +42,8 @@ function SendMessage() {
 
     try {
       const resp = await axios.post<ApiResponse>('/api/send-message', { username: username, ...data })
-      toast.success(resp.data.message)
+      toast.success(resp.data.message);
+      form.reset();
     } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>;
       toast.error(axiosError.response?.data.message || "Failed to send message")

@@ -37,7 +37,7 @@ function SignIn() {
 
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
     setIsSubmitting(true)
-    try {
+    
       const result = await signIn('credentials',{
         redirect: false,
         identifier: data.identifier,
@@ -49,15 +49,12 @@ function SignIn() {
       }
       if(result?.url){
         toast.success("Login Successfully")
-        route.replace("/dashboard")
+        route.push("/dashboard")
       }
-    } catch (error) {
-      console.log(error);
+    
       
-      toast.error("Incorrect Username or Password")
-    }finally{
-      setIsSubmitting(false)
-    }
+      //toast.error("Incorrect Username or Password")
+    
     
     
   }

@@ -66,7 +66,8 @@ function SignUp() {
       const response = await axios.post('/api/sign-up', data);
       
       toast.success(response?.data.message)
-      route.replace(`/verify/${username}`);
+      route.replace("/dashboard")
+      //route.replace(`/verify/${username}`);
     } catch (error) {
       console.error("Error in sign-up user", error);
       const axiosErr = error as AxiosError<ApiResponse>;

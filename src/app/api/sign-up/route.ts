@@ -56,11 +56,11 @@ export async function POST(request: Request) {
           password: hashedPassword,
           verifyCode,
           verifyCodeExpiry: expiryDate,
-          isVerified: false,
+          isVerified: true,
           isAcceptingMessage: true,
           messages: [],
       });
-      //console.log(newUser);
+      console.log(newUser);
       
       await newUser.save();
     }

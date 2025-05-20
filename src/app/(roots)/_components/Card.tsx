@@ -118,7 +118,7 @@ function MessageCard({ message, onMessageDelete }: MessageCardProps) {
 
                 <DialogContent>
                     <div ref={dialogRef} className="bg-white p-4 rounded-md space-y-6 max-w-md overflow-auto">
-                        <DialogHeader>
+                        <DialogHeader className="w-full text-left">
                             <DialogTitle>Letter from someone 🦹‍♀️</DialogTitle>
                             
                         </DialogHeader>
